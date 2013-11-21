@@ -3,7 +3,6 @@ Trabalho_IHM
 
 Trabalho da disciplina IHM
 
-Integrantes:
-------------
+###Integrantes:
 
 - Cássio Oliveira Botaro
