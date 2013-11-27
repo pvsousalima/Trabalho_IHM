@@ -1,58 +1,14 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Meu app</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Bootstrap -->
-    <link href="{{=URL('static','css/bootstrap.min.css')}}" rel="stylesheet">
-    <link href="{{=URL('static','css/custom.css')}}" rel="stylesheet">
-  </head>
-  <body >
-
-    <!-- navbar -->
-    <header>
-        <nav class="nav navbar-inverse navbar-sentibol" role="navigation">
+{{extend 'layout.html'}}
+    <section class="conteudo">
         <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <img class="navbar-brand logo" src="{{=URL('static','images/fav-icon.png')}}" />
+            <div class="col-sm-6 col-xs-12">
+                <h2 class="nome-app">Meu App <span class="text-muted">Viva bem se divertindo!</span></h2>
+                <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi, tempora illum quis commodi iusto rem repudiandae minima natus deserunt explicabo quo magni ut repellat fuga deleniti in sint veniam. Soluta, aspernatur, similique, fuga enim labore sit ipsam quia magnam incidunt est debitis vel quo dolorum ratione dolores fugiat sint animi tempore alias molestias eveniet accusamus sapiente? Rem, quis, debitis odio voluptate maiores qui illo ipsam illum architecto explicabo aliquam eos necessitatibus aliquid? Animi, pariatur, voluptas tempora ipsa alias earum maiores.</p>
             </div>
-            <!--/.navbar-collapse -->
-            <div class="navbar-collapse collapse navbar-right">
-                <a href="{{=URL(f='user')}}" class="btn btn-danger navbar-btn">{{=T("Entrar")}}</a>
-                <a href="{{=URL(f='user/register')}}" class="btn btn-primary navbar-btn ">{{=T("Registrar")}}</a>
+            <div class="col-sm-6 col-xs-12">
+                <img class="img-responsive" src="http://placecreature.com/500/500">
+                <!-- <img class="img-responsive" src="{{=URL('static','images/front.jpg')}}"> -->
             </div>
-        </div>
-
-    </nav>
-    </header>
-    <section class="container conteudo">
-        <div class="col-sm-6 col-xs-12">
-            <h1>Hello, world!</h1>
-            <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, repellendus, cumque totam magnam voluptatibus assumenda dolore vel deserunt ad eum in non aliquid ipsa iusto magni porro quod nesciunt consectetur minus placeat doloremque quidem voluptate quibusdam laborum possimus atque voluptatem repudiandae voluptas itaque minima praesentium eius deleniti inventore dolorum ratione culpa ex necessitatibus ea esse amet. Qui, odit, aperiam, necessitatibus error sit fuga incidunt quas exercitationem minima adipisci animi explicabo laborum beatae fugit dicta nobis officiis temporibus esse eius doloremque libero aliquam voluptatum ipsum nemo alias reprehenderit debitis facere quidem itaque aut tempore ad reiciendis dolorem aspernatur ducimus obcaecati aliquid!</p>
-        </div>
-        <div class="col-sm-6 col-xs-12">
-            <img class="img-responsive" src="http://placecreature.com/500/500">
-            <!-- <img class="img-responsive" src="{{=URL('static','images/front.jpg')}}"> -->
-
         </div>
     </section>
-    <!-- FOOTER -->
-    <hr>
-      <footer class="container">
-        <p style="text-align:center">
-          Copyright &copy; Company 2013 &middot; Facebook &middot; Twitter &middot; Google+
-        </p>
-      </footer>
-    <!-- /END OF FOOTER -->
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://code.jquery.com/jquery.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="{{=URL('static','js/bootstrap.min.js')}}"></script>
-  </body>
-</html>

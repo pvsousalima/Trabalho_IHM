@@ -1,0 +1,41 @@
+{{extend 'layout.html'}}
+{{block header}}
+<link href="{{=URL('static','css/register.css')}}" rel="stylesheet">
+{{end}}
+<section class=" conteudo container">
+<form role="form" class="formulario col-md-4 col-md-offset-4 col-xs-12" >
+  <div class="form-group">
+    <label for="exampleInputEmail1">E-mail</label>
+    <div class="input-group">
+        <span class="input-group-addon">@</span>
+        <input type="email" class="form-control" placeholder="Entre com um email">
+    </div>
+
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Senha</label>
+    <div class="input-group">
+        <span class="input-group-addon">***</span>
+        <input type="email" class="form-control" placeholder="Senha">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Idade</label>
+    <div class="input-group">
+        <span class="input-group-addon">123</span>
+        <input type="email" class="form-control" placeholder="Idade">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Sobre você</label>
+    <p class="help-block">Breve descrição de você</p>
+    <textarea rows="4" cols="30"></textarea>
+  </div>
+  <div class="form-group">
+      <label for="exampleInputFile">Imagem</label>
+      <input type="file" id="exampleInputFile">
+      <p class="help-block">Imagem utilizada no perfil</p>
+    </div>
+  <a href={{=URL(f='index')}} class="btn btn-default btn btn-success btn-block">Entrar</a>
+</form>
+</section>

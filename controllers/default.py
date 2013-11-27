@@ -18,8 +18,17 @@ def index():
     if you need a simple wiki simply replace the two lines below with:
     return auth.wiki()
     """
-    response.flash = T("Welcome to web2py!")
-    return dict(message=T('Hello World'))
+    return dict(bgbody=URL('static','images/bg.jpg'))
+
+def login():
+    return dict(bgbody=URL('static','images/bg-login.jpg'))
+
+def register():
+    return dict(bgbody=URL('static','images/bg-login.jpg'))
+
+def profile():
+    alterado = request.args(0) or None
+    return dict(bgbody=URL('static','images/bg.jpg'),alterado=alterado)
 
 
 def user():
@@ -37,7 +46,7 @@ def user():
         @auth.requires_permission('read','table name',record_id)
     to decorate functions that need access control
     """
-    return dict(form=auth())
+    return dict(form=auth(),bgbody=None)
 
 @cache.action()
 def download():

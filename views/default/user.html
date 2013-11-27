@@ -1,5 +1,7 @@
 {{extend 'layout.html'}}
-
+{{block header}}
+<link href="{{=URL('static','css/login.css')}}" rel="stylesheet">
+{{end}}
 <h2>{{=T( request.args(0).replace('_',' ').capitalize() )}}</h2>
 <div id="web2py_user_form">
 {{

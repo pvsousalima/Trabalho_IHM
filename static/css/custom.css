@@ -1,3 +1,15 @@
+.nav-top{
+    background-color: transparent;
+}
 .conteudo{
     padding:20px 0 20px 0;
+    min-height: 600px;
+}
+
+.nome-app{
+    font-size: 50px;
+}
+
+footer{
+    background-color: transparent;
 }

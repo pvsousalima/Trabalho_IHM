@@ -1,0 +1,88 @@
+{{extend 'layout.html'}}
+{{block header}}
+<link href="{{=URL('static','css/profile.css')}}" rel="stylesheet">
+{{end}}
+<section class="conteudo container">
+<div class="row">
+    <div class="col-md-6 col-xs-12" >
+            <img class="img-responsive img-circle" style="margin:auto" src="{{=URL('static','images/perfil.png')}}" alt="perfil">
+            <p style="text-align:center">Lorem ipsum dolor sit amet.,10</p>
+            <p style="text-align:center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam, aspernatur pariatur cum at nulla molestiae ipsam quas dicta possimus aliquid.</p>
+            <div class="panel panel-info" >
+              <div class="panel-heading">Histórico</div>
+              <div class="panel-body">
+
+                <div class="list-group">
+                  <a href="#" class="list-group-item">
+                    <img class="img-responsive img-circle" style="float:left;margin-right:10px;" src="{{=URL('static','images/gplus-32.png')}}" alt="perfil">
+                    <h4 class="list-group-item-heading">List group item heading</h4>
+                    <p class="list-group-item-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad, nam!</p>
+                  </a>
+                  <a href="#" class="list-group-item">
+                      <img class="img-responsive img-circle" style="float:left;margin-right:10px;" src="{{=URL('static','images/gplus-32.png')}}" alt="perfil">
+                      <h4 class="list-group-item-heading">List group item heading</h4>
+                      <p class="list-group-item-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, tempore?</p>
+                  </a>
+                  <a href="#" class="list-group-item">
+                      <img class="img-responsive img-circle" style="float:left;margin-right:10px;" src="{{=URL('static','images/gplus-32.png')}}" alt="perfil">
+                      <h4 class="list-group-item-heading">List group item heading</h4>
+                      <p class="list-group-item-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit, asperiores.</p>
+                  </a>
+
+                </div>
+              </div>
+            </div>
+
+
+    </div>
+    <div class="col-md-6 col-xs-12" >
+        <div class="row">
+            <div class="col-md-4 col-xs-4">
+                <img class="img-responsive img-circle" style="background-color:rgba(255,255,255,0.6);padding:15px" src="{{=URL('static','images/brain.png')}}" alt="perfil">
+            </div>
+            <div class="col-md-6 col-xs-6">
+                <div class="progress progress-striped {{if alterado:}}active{{pass}}" style="margin-top:25%">
+                  <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:{{if alterado:}}56% {{else:}} 58% {{pass}}">
+                  </div>
+                </div>
+            </div>
+            <div class="col-md-2 col-xs-2">
+                {{if alterado:}}
+                <span class="badge">-2</span>
+                {{pass}}
+            </div>
+        </div>
+        <div class="row" style="margin-top:20px">
+            <div class="col-md-4 col-xs-4">
+                <img class="img-responsive img-circle" style="background-color:rgba(255,255,255,0.6);padding:15px" src="{{=URL('static','images/food.png')}}" alt="perfil">
+            </div>
+            <div class="col-md-6 col-xs-6">
+                <div class="progress progress-striped" style="margin-top:25%">
+                  <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width:30%">
+                  </div>
+                </div>
+            </div>
+            <div class="col-md-2 col-xs-2">
+            </div>
+        </div>
+        <div class="row" style="margin-top:20px">
+            <div class="col-md-4 col-xs-4">
+                <img class="img-responsive img-circle" style="background-color:rgba(255,255,255,0.6);padding:15px" src="{{=URL('static','images/halter.png')}}" alt="perfil">
+            </div>
+            <div class="col-md-6 col-xs-6">
+                <div class="progress progress-striped {{if alterado:}}active{{pass}} " style="margin-top:25%">
+                  <div class="progress-bar progress-bar-danger " role="progressbar"  aria-valuemin="0" aria-valuemax="100" style="width:{{if alterado:}}40% {{else:}} 30% {{pass}}">
+                  </div>
+                </div>
+            </div>
+            <div class="col-md-2 col-xs-2">
+                {{if alterado:}}
+                <span class="badge">+10</span>
+                {{pass}}
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</section>
