@@ -30,6 +30,8 @@ def profile():
     alterado = request.args(0) or None
     return dict(bgbody=URL('static','images/bg.jpg'),alterado=alterado)
 
+def search():
+    return dict(bgbody=URL(None))
 
 def user():
     """

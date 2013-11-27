@@ -1,0 +1,95 @@
+
+
+.circular {
+  width: 300px;
+  height: 300px;
+  border-radius: 150px;
+  -webkit-border-radius: 150px;
+  -moz-border-radius: 150px;
+  background: url(http://www.corredortrainer.com.br/wp-content/uploads/2011/11/treinamento-corrida.jpg) no-repeat;
+  box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+  -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+  -moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+}
+
+.circular img {
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+
+
+
+
+
+p.nav-right {
+    float:right;
+    margin:0;
+    font-size:18px;
+    line-height:48px;
+    font-weight:700;
+    text-transform:uppercase;
+}
+
+.search-form {
+    position:relative;
+
+}
+
+input[type="text"] {
+    width:48px;
+    height:48px;
+    padding:0;
+    padding-left:44px; /* account for 4px border to get perfect circle */
+    border:solid 2px rgb(200,200,200);
+
+    font-weight:300;
+    font-size:18px;
+    color:rgb(150,150,150);
+
+    -webkit-border-radius:24px;
+       -moz-border-radius:24px;
+            border-radius:24px;
+
+    -webkit-transition:width 0.5s ease-in-out;
+       -moz-transition:width 0.5s ease-in-out;
+            transition:width 0.5s ease-in-out;
+}
+
+input[type="text"]:focus,
+input[type="text"]:active {
+    width:480px;
+
+    -webkit-box-shadow:4px 4px 8px rgb(220,220,220);
+       -moz-box-shadow:4px 4px 8px rgb(220,220,220);
+            box-shadow:4px 4px 8px rgb(220,220,220);
+}
+
+label {
+    display:block;
+    width:48px;
+    height:48px;
+    font-size:0;
+    position:absolute;
+    padding:0;
+    top:0;
+    left:0;
+    cursor:pointer;
+}
+
+p.result-empty {
+    background-color:rgb(255,180,180);
+    padding:12px;
+    border:solid 1px rgb(255,130,130);
+    margin:0;
+    margin-top:18px;
+    color:rgb(50,50,50);
+}
+
+p.result-success {
+    background-color:rgb(180,255,180);
+    padding:12px;
+    border:solid 1px rgb(130,255,130);
+    margin:0;
+    margin-top:18px;
+    color:rgb(50,50,50);
+}
