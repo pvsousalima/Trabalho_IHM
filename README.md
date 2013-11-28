@@ -7,19 +7,21 @@ Trabalho da disciplina IHM
 
 - Cássio Oliveira Botaro
 
+- Pedro Victor de Sousa Lima
+
 ###TODO:
 
 ####Interface
 
-[ ] Tela principal
+[x] Tela principal
 
-[ ] Tela Cadastro
+[x] Tela Cadastro
 
-[ ] Tela Login
+[x] Tela Login
 
-[ ] Tela Perfil
+[x] Tela Perfil
 
-[ ] Tela Atividade
+[ ] Tela busca de atividades
 
 [ ] Tela Check-in
 
@@ -27,7 +29,7 @@ Trabalho da disciplina IHM
 
 [ ] Busca Atividade
 
-[ ] Login
+[x] Login
 
 [ ] Cadastro
 
