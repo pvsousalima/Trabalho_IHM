@@ -8,7 +8,7 @@
     <label for="exampleInputEmail1">E-mail</label>
     <div class="input-group">
         <span class="input-group-addon">@</span>
-        <input type="email" class="form-control" placeholder="Entre com um email">
+        <input type="email" class="form-control" placeholder="Entre com um email" required>
     </div>
 
   </div>
@@ -16,26 +16,24 @@
     <label for="exampleInputEmail1">Senha</label>
     <div class="input-group">
         <span class="input-group-addon">***</span>
-        <input type="email" class="form-control" placeholder="Senha">
+        <input type="password" class="form-control" placeholder="Senha" required>
     </div>
   </div>
   <div class="form-group">
     <label for="exampleInputEmail1">Idade</label>
     <div class="input-group">
         <span class="input-group-addon">123</span>
-        <input type="email" class="form-control" placeholder="Idade">
+        <input type="number " class="form-control" placeholder="Idade" required>
     </div>
   </div>
   <div class="form-group">
     <label for="exampleInputEmail1">Sobre você</label>
-    <p class="help-block">Breve descrição de você</p>
-    <textarea class="form-control" rows="4" cols="35" style="resize:none"></textarea>
+    <textarea class="form-control" rows="4" cols="35" style="resize:none" required></textarea>
   </div>
   <div class="form-group">
       <label for="exampleInputFile">Imagem</label>
-      <input type="file" id="exampleInputFile">
-      <p class="help-block">Imagem utilizada no perfil</p>
+      <input type="file" id="exampleInputFile" required>
     </div>
-  <a href={{=URL(f='index')}} class="btn btn-default btn btn-success btn-block">Entrar</a>
+  <a href="{{=URL(f='login')}}" class="btn btn-default btn btn-success btn-block">Cadastrar</a>
 </form>
 </section>
