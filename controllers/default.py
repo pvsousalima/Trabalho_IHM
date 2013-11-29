@@ -21,7 +21,8 @@ def index():
     return dict(bgbody=URL('static','images/bg.jpg'))
 
 def login():
-    return dict(bgbody=URL('static','images/bg-login.jpg'))
+    form_login = auth.login()
+    return dict(bgbody=URL('static','images/bg-login.jpg'),form_login=form_login)
 
 def register():
     return dict(bgbody=URL('static','images/bg-login.jpg'))
