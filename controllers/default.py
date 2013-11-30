@@ -27,6 +27,7 @@ def login():
 def register():
     return dict(bgbody=URL('static','images/bg-login.jpg'))
 
+@auth.requires_login()
 def profile():
     alterado = request.args(0) or None
     return dict(bgbody=URL('static','images/bg.jpg'),alterado=alterado)

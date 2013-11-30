@@ -138,7 +138,7 @@ def query_by_table_type(tablename, db, request=request):
 # ## list all databases and tables
 # ###########################################################
 def index():
-    return dict(databases=databases)
+    return dict(bgbody=None,databases=databases)
 
 
 # ##########################################################
@@ -151,7 +151,7 @@ def insert():
     form = SQLFORM(db[table], ignore_rw=ignore_rw)
     if form.accepts(request.vars, session):
         response.flash = T('new record inserted')
-    return dict(form=form, table=db[table])
+    return dict(bgbody=None,form=form, table=db[table])
 
 
 # ##########################################################
@@ -274,6 +274,7 @@ def select():
     # end handle upload csv
 
     return dict(
+        bgbody=None,
         form=form,
         table=table,
         start=start,
@@ -327,7 +328,7 @@ def update():
         qry = query_by_table_type(table, db)
         redirect(URL('select', args=request.args[:1],
                  vars=dict(query=qry)))
-    return dict(form=form, table=db[table])
+    return dict(bgbody=None,form=form, table=db[table])
 
 
 # ##########################################################
@@ -487,7 +488,7 @@ def ccache():
     disk['keys'] = key_table(disk['keys'])
     total['keys'] = key_table(total['keys'])
 
-    return dict(form=form, total=total,
+    return dict(bgbody=None, form=form, total=total,
                 ram=ram, disk=disk, object_stats=hp != False)
 
 
@@ -588,7 +589,7 @@ def bg_graph_model():
             return graph.draw(format=request.args(0), prog='dot')
 
 def graph_model():
-    return dict(databases=databases, pgv=pgv)
+    return dict(bgbody=None, databases=databases, pgv=pgv)
 
 def manage():
     tables = manager_action['tables']

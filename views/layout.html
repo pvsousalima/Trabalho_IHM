@@ -22,6 +22,7 @@
             <div class="navbar-right">
 
             {{if auth.is_logged_in():}}
+                <a href="{{=URL(f='profile')}}" class="navbar-text" style="font-size:18px">{{=auth.user.first_name.capitalize()}}</a>
                 <a href="{{=URL(f='user/logout')}}" class="btn btn-danger navbar-btn">{{=T("Sair")}}</a>
             {{else:}}
             <a href="{{=URL(f='login')}}" class="btn btn-danger navbar-btn">{{=T("Entrar")}}</a>
@@ -33,6 +34,16 @@
     </nav>
     </header>
     {{block content}}
+        {{if response.flash:}}
+        <script>
+            function some(){
+                $("#alert").fadeOut("slow", function(){ $("#alert").close();});
+            }
+        </script>
+        <div id="alert"  onclick="some()"  class="container alert alert-info">
+            <a class="close"  href="#" aria-hidden="true">{{=response.flash}} &times;</a>
+        </div>
+        {{pass}}
         {{include}}
     {{end}}
    <!-- FOOTER -->
@@ -44,7 +55,8 @@
     <!-- /END OF FOOTER -->
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="{{=URL('static','js/jquery.js')}}"></script>
+    <script src="{{=URL('static','js/web2py.js')}}"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="{{=URL('static','js/bootstrap.min.js')}}"></script>
   </body>

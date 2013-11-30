@@ -2,3 +2,17 @@
     padding:20px;
     min-height: 600px;
 }
+.list-group-item{
+    padding: 10px;
+}
+
+.modal-header{
+    color:#3a87ad;
+    background-color: #d9edf7;
+    border-color: #bce8f1;
+}
+
+.modal-text{
+    text-align:center;
+    font-size: 1.4em;
+}

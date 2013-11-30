@@ -42,9 +42,15 @@ response.generic_patterns = ['*'] if request.is_local else []
 from gluon.tools import Auth, Crud, Service, PluginManager, prettydate
 auth = Auth(db)
 crud, service, plugins = Crud(db), Service(), PluginManager()
+auth.settings.extra_fields["auth_user"] = [
+    Field("bio", "text"),
+    Field("idade","integer"),
+    Field("avatar", "upload")
 
+]
 ## create all tables needed by auth if not custom tables
 auth.define_tables(username=False, signature=False)
+auth.settings.register_next= URL('login')
 
 ## configure email
 mail = auth.settings.mailer
@@ -57,6 +63,10 @@ auth.settings.registration_requires_verification = False
 auth.settings.registration_requires_approval = False
 auth.settings.reset_password_requires_verification = True
 auth.settings.login_next = URL(f='profile')
+auth.messages['invalid_login'] = "Não foi possível realizar auteticação. Confira seu email e senha."
+auth.messages['logged_in'] = "Bem vindo!"
+auth.messages['logged_out'] = "Adeus!"
+auth.settings.login_url = URL(f="login")
 
 ## if you need to use OpenID, Facebook, MySpace, Twitter, Linkedin, etc.
 ## register with janrain.com, write your domain:api_key in private/janrain.key
@@ -82,3 +92,9 @@ use_janrain(auth, filename='private/janrain.key')
 
 ## after defining tables, uncomment below to enable auditing
 # auth.enable_record_versioning(db)
+db.define_table('atividade',
+        Field('nome'),
+        Field('descricao',label="Descrição"),
+        Field('tipo', requires=IS_IN_SET(['fisica','mental','alimentar']))
+        )
+

@@ -1,4 +1,3 @@
-
 {{extend 'layout.html'}}
 {{block header}}
 <link href="{{=URL('static','css/search.css')}}" rel="stylesheet">
@@ -10,77 +9,60 @@
         <h1>O que você está fazendo? <p><small>Procure alguma atividade!</small></p></h1>
     </div>
 
-    <ul class="search-form">
-        <label for="search"> <img src="{{=URL('static','images/search.png')}}" /></label>
 
-        <input type="text" id="search" name="search" placeholder="Type search terms...">
-    </ul>
+    <div class="col-md-6">
+        <div class="col-md-10" style="padding-right:10px">
+            <form>
+                <input onkeyup="busca()" type="text" id="month" name="month" class="input-lg form-control">
+            </form>
+            <div class="sugesstions">
+            {{for row in db(db.atividade).select():}}
+            <img class="thumbnail images" src="{{=URL('static','images/'+ row.nome +'.jpg')}}" alt="{{=row.nome}}">
+            {{pass}}
+            </div>
+        </div>
+        <div class="col-md-2" style="padding:0">
+            <a class="btn btn-success btn-lg" onclick="busca()" href=""><img src="{{=URL('static','images/search.png')}}" alt=""></a>
+          </button>
+        </div>
+    </div>
 
     <!-- Button trigger modal -->
-    <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-      Launch demo modal
-  </button>
 
-  <!-- Modal -->
-  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 
-            <ul class="nav nav-pills nav-stacked">
-              <li class="active">
-                <a href="#">Corrida</a>
-            </li>
-        </ul>
-    </div>
-    <div class="modal-body">
+<div class="col-md-6">
+    <div class="panel panel-info" >
+      <div class="panel-heading">Atividades recentes</div>
+      <div class="panel-body">
 
-      <div class="jumbotron">
-        <div align="center">
-            <div class="circular"><img src="" alt=""/></div>
-        </div>
 
-        <div align = "center">
-            <textarea class="form-control" id="focusedInput" rows="3" type="text" value="Add a comment..." style="resize:none"></textarea>
-        </div>
-        <p/>
-        <div align="center">
-            <!-- Indicates a successful or positive action -->
-        </div>
-    </div>
-
-    <button type="button" class="btn btn-success btn-lg btn-block">
-        Check-in</button>
-
-    </div>
-</div><!-- /.modal-content -->
-</div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
-<p/>
-<div class="panel panel-info" >
-  <div class="panel-heading">Atividades recentes</div>
-  <div class="panel-body">
-
+          <div class="row">
+              <div class="col-sm-6 col-md-3">
+                <a href="#" onclick="notimplemented()" class="thumbnail">
+                  <img src="{{=URL('static','images/ciclismo.jpg')}}" />
+              </a>
+          </div>
+      </div>
 
       <div class="row">
           <div class="col-sm-6 col-md-3">
-            <a href="#" class="thumbnail">
-              <img src="{{=URL('static','images/ciclismo.jpg')}}" />
+            <a href="#" onclick="notimplemented()" class="thumbnail">
+              <img src="{{=URL('static','images/corrida.jpg')}}" />
           </a>
       </div>
-  </div>
+    </div>
 
-  <div class="row">
-      <div class="col-sm-6 col-md-3">
-        <a href="#" class="thumbnail">
-          <img src="{{=URL('static','images/corrida.jpg')}}" />
-      </a>
-  </div>
+    </div>
+    </div>
 </div>
-
-</div>
-</div>
-
 
 </section>
+<script>
+    function notimplemented(){
+        alert('Não implementado ainda.');
+    }
+
+    function busca(){
+        alert('teste');
+    }
+</script>

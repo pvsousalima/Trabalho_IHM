@@ -9,13 +9,9 @@
            <div class="panel panel-info" >
               <div class="panel-heading">Perfil</div>
               <div class="panel-body">
-
-                <img class="img-responsive img-circle" style="margin:auto" src="{{=URL('static','images/perfil.png')}}" alt="perfil">
-                <p></p>
-
-
-                <p style="text-align:center">Cássio Botaro, 20</p>
-                <p style="text-align:center">Eu ... gosto de praticar esportes que são correr, futebol, natação e outros, tambem gosto de ler livros de ação e de suspense. Na alimentação eu gosto de churrasco e bastante doce.</p>
+                <img class="img-responsive img-circle" style="margin:auto;height:150px;width:150px;padding-bottom:10px;" src="{{=URL('download',args=auth.user.avatar)}}" alt="perfil">
+                <p style="text-align:center">{{=auth.user.first_name.capitalize()}} {{=auth.user.last_name.capitalize()}}, {{=auth.user.idade}}</p>
+                <p style="text-align:center">{{=auth.user.bio}}</p>
 
             </div>
         </div>
@@ -25,30 +21,30 @@
           <div class="panel-body">
 
             <div class="list-group">
-                <a href="#"  class="list-group-item">
-                  <img class="img-responsive img-circle" style="float:left;margin-right:10px;" src="{{=URL('static','images/gplus-32.png')}}" alt="perfil">
+                <a href="#" data-toggle="modal" data-target="#myModal" class="list-group-item">
+                  <img class="img-responsive img-circle" style="float:left;margin-right:10px;" src="{{=URL('static','images/mini_corrida.jpg')}}" alt="perfil">
                   <h4 class="list-group-item-heading">Correr</h4>
-                  <p class="list-group-item-text">Hoje voçê realizou uma atividade fisíca, você correu por ... minutos....</p>
+                  <p class="list-group-item-text">Hoje você realizou uma atividade física, você correu por ... minutos....</p>
               </a>
-              <a href="#" onclick="notimplemented()" class="list-group-item">
-                <img class="img-responsive img-circle" style="float:left;margin-right:10px;" src="{{=URL('static','images/gplus-32.png')}}" alt="perfil">
+              <a style="padding-bottom:30px" href="#" onclick="notimplemented()" class="list-group-item">
+                <img class="img-responsive img-circle" style="float:left;margin-right:10px;" src="{{=URL('static','images/mini_leitura.jpg')}}" alt="perfil">
                 <h4 class="list-group-item-heading">Leitura de Livro</h4>
                 <p class="list-group-item-text">Você realizou a leitura de um livro........</p>
             </a>
-            <a href="#" onclick="notimplemented()" class="list-group-item">
-              <img class="img-responsive img-circle" style="float:left;margin-right:10px;" src="{{=URL('static','images/gplus-32.png')}}" alt="perfil">
+            <a href="#" style="padding-bottom:30px"  onclick="notimplemented()" class="list-group-item">
+              <img class="img-responsive img-circle" style="float:left;margin-right:10px;" src="{{=URL('static','images/mini-alimento.jpg')}}" alt="perfil">
               <h4 class="list-group-item-heading">Alimentação</h4>
               <p class="list-group-item-text">Hoje você se alimentou bem, o seu prato foi .....</p>
           </a>
 
-          <a href="#" onclick="notimplemented()" class="list-group-item">
-              <img class="img-responsive img-circle" style="float:left;margin-right:10px;" src="{{=URL('static','images/gplus-32.png')}}" alt="perfil">
+          <a href="#" style="padding-bottom:30px"  onclick="notimplemented()" class="list-group-item">
+              <img class="img-responsive img-circle" style="float:left;margin-right:10px;" src="{{=URL('static','images/mini-caminhada.jpg')}}" alt="perfil">
               <h4 class="list-group-item-heading">Caminhada</h4>
-              <p class="list-group-item-text">Hoje voçê realizou uma atividade fisíca, você correu por ... minutos....</p>
+              <p class="list-group-item-text">Você realizou uma caminhada curta!</p>
           </a>
 
-          <a href="#" onclick="notimplemented()"  class="list-group-item">
-              <img class="img-responsive img-circle" style="float:left;margin-right:10px;" src="{{=URL('static','images/gplus-32.png')}}" alt="perfil">
+          <a href="#" style="padding-bottom:30px" onclick="notimplemented()"  class="list-group-item">
+              <img class="img-responsive img-circle" style="float:left;margin-right:10px;" src="{{=URL('static','images/mini-estudos.jpg')}}" alt="perfil">
               <h4 class="list-group-item-heading">Estudos</h4>
               <p class="list-group-item-text">O Hobbit, Tolkien. você correu por ... minutos....</p>
           </a>
@@ -90,7 +86,7 @@
     </div>
     <div class="col-md-6 col-xs-6">
         <div class="progress progress-striped" style="margin-top:25%">
-          <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width:30%">
+          <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width:30%" >
           </div>
       </div>
   </div>
@@ -125,7 +121,7 @@
         <div class="col-md-6 col-xs-12" >
             <div class="row">
                 <div class="col-md-4 col-xs-4">
-                    <a href="./search.html"> <img  src="{{=URL('static','images/badges.png')}}" alt="perfil"></a>
+                    <img  src="{{=URL('static','images/badges.png')}}" alt="perfil">
                 </div>
             </div>
         </div>
@@ -139,6 +135,24 @@
 </section>
 <script>
     function notimplemented(){
-        alert('Não implementado ainda');
+        alert('Não implementado ainda.');
     }
 </script>
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Correr</h4>
+      </div>
+      <div class="modal-body">
+            <img class="img-responsive img-circle" style="margin:auto;height:150px;width:150px;padding-bottom:10px;" src="{{=URL('static','images/corrida.jpg')}}" alt="perfil">
+            <p class="modal-text" >Hoje você realizou uma atividade física, você correu por ... minutos....</p>
+      </div>
+      <div class="modal-footer">
+        <a href="{{=URL(f='profile/alt')}}" style="font-size:1.2em" class="btn btn-block btn-success" >Check-in</a>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
