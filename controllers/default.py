@@ -25,7 +25,8 @@ def login():
     return dict(bgbody=URL('static','images/bg-login.jpg'),form_login=form_login)
 
 def register():
-    return dict(bgbody=URL('static','images/bg-login.jpg'))
+    form_register = auth.register()
+    return dict(bgbody=URL('static','images/bg-login.jpg'), form_register=form_register)
 
 @auth.requires_login()
 def profile():
